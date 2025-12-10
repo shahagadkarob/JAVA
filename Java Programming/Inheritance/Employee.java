@@ -82,6 +82,29 @@ void Display(){
     System.out.println("Manager Department:"+this.Department);
 }
 }//Manager class ends here
+
+class SalesManager{
+    double target;
+    double incentive;
+
+    SalesManager(){
+        super();
+        this.target = 0;
+        this.incentive =0;
+    }
+    SalesManager(int id, String name, double salary, double target, double incentive, String region) {
+        super(id, name, salary);
+        this.target = target;
+        this.incentive = incentive;
+    }
+    void setTarget(){
+        
+    }
+
+
+
+
+}
 class TestEmployee {
 	public static void main(String args[]){
 		// Scanner sc= new Scanner(System.in);

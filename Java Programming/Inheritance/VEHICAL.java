@@ -1,7 +1,9 @@
-class vehicle {
+abstract class vehicle {
     String brand;
     String model;
     double price;
+
+    abstract void applyBreak();
 
     vehicle(){
         this.brand = "";
@@ -72,6 +74,10 @@ class Car extends vehicle{
         System.out.println("Car Seating Capacity: "+this.seatingCapacity);
         System.out.println("Car Fuel Type: "+this.fuelType);
     }
+
+    void applyBreak(){
+        System.out.println("Car is applying brakes.");
+    }
 }//Car class ends
 
 class Bike extends vehicle{
@@ -106,15 +112,54 @@ class Bike extends vehicle{
         System.out.println("Bike Has Carrier: "+this.hasCarrier);
         System.out.println("Bike Type: "+this.bikeType);
     }
+    void applyBreak(){
+        System.out.println("Bike is applying brakes.");
+    }
 }//Bike class ends
+class Bus {
+    int passengerCapacity;
+    int numberOfDoors;
+
+    Bus() {
+        super();
+        this.passengerCapacity = 0;
+        this.numberOfDoors = 0;
+    }
+    Bus(int passengerCapacity, int numberOfDoors) {
+        super(brand, model, price);
+        this.passengerCapacity = passengerCapacity;
+        this.numberOfDoors = numberOfDoors;
+    }
+    void setPassengerCapacity(int passengerCapacity) {
+        this.passengerCapacity = passengerCapacity;
+    }
+    void setNumberOfDoors(int numberOfDoors) {
+        this.numberOfDoors = numberOfDoors;
+    }
+    int getPassengerCapacity() {
+        return this.passengerCapacity;
+    }
+    int getNumberOfDoors() {
+        return this.numberOfDoors;
+    }
+    void Display() {
+        super.Display();
+        System.out.println("Bus Passenger Capacity: " + this.passengerCapacity);
+        System.out.println("Bus Number of Doors: " + this.numberOfDoors);
+    }
+    void applyBreak(){
+        System.out.println("Bus is applying brakes.");
+    }
+
+}
 
 class testVehical {
     public static void main(String[] args){
         Car car1 = new Car("Toyota","Camry",30000,5,"Petrol");
         Bike bike1 = new Bike("Yamaha","FZ",1500,true,"Sport");
-        Bike bike2 = new Bike();
+        Bus b1 = new Bus(50,2);
         bike1.Display();
-        bike2.Display();
+        b1.Display();
         car1.Display();
     }
 }
